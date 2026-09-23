@@ -49,7 +49,7 @@ def gradient_descent(x,y,w_in,b_in,alpha,number_of_iterations):
             p_history.append([final_w,final_b])
     return final_w,final_b,J_history,p_history
 
-w,b,J_history,p_history = gradient_descent(x_train,y_train,0,0,2.0e-7,1000)
+w,b,J_history,p_history = gradient_descent(x_train,y_train,0,0,1.0e-9,1000000)
 
 #print(J_history)
 #print(J_history[0],J_history[-1],max(J_history))
@@ -75,3 +75,8 @@ ax1.set_xlabel('iteration step')  ;  ax2.set_xlabel('iteration step')
 '''
 #plt.show()
 
+
+x_in = int(input("Enter number of years of education: "))
+salary_prediction =  float(w)*x_in + float(b)
+salary_prediction = round(salary_prediction, 2)
+print(f"Your salary is likely to be in the range of £{salary_prediction - 2000 if salary_prediction >= 2000 else 0} - £{salary_prediction + 2000}.")
