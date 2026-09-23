@@ -36,7 +36,7 @@ def gradient_descent(x,y,w_in,b_in,alpha,number_of_iterations):
         final_b = final_b - (alpha*dj_db)
     return final_w,final_b
 
-w,b = gradient_descent(x_train,y_train,0,0,3.0e-7,20000)
+w,b = gradient_descent(x_train,y_train,0,0,3.0e-7,200)
 #print(w,b)
 #print(calculate_slope(x_train,y_train,w,b))
 #print(calculate_cost(x_train,y_train,w,b))
